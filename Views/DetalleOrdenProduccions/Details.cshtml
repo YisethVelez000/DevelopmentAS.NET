@@ -1,0 +1,42 @@
+﻿@model DevelopmentAS.Models.DetalleOrdenProduccion
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>DetalleOrdenProduccion</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tallas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tallas)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Productos)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Productos)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cantidad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NroOrdenProduccionNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NroOrdenProduccionNavigation.NroOrdenProduccion)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdDetalleOrdenProduccion">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

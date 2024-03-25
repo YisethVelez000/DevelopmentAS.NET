@@ -1,0 +1,44 @@
+﻿@model DevelopmentAS.Models.FichasTecInsumo
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>FichasTecInsumo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdFichaTecIns" />
+            <div class="form-group">
+                <label asp-for="IdFicha" class="control-label"></label>
+                <select asp-for="IdFicha" class="form-control" asp-items="ViewBag.IdFicha"></select>
+                <span asp-validation-for="IdFicha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdInsumo" class="control-label"></label>
+                <select asp-for="IdInsumo" class="form-control" asp-items="ViewBag.IdInsumo"></select>
+                <span asp-validation-for="IdInsumo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cantidad" class="control-label"></label>
+                <input asp-for="Cantidad" class="form-control" />
+                <span asp-validation-for="Cantidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

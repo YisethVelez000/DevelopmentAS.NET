@@ -1,0 +1,53 @@
+﻿@model IEnumerable<DevelopmentAS.Models.FichasTecnica>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreFichaTecnica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoFicha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Talla)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreFichaTecnica)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoFicha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Talla)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdFicha">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdFicha">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdFicha">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

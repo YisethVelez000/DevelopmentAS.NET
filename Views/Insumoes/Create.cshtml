@@ -1,0 +1,68 @@
+﻿@model DevelopmentAS.Models.Insumo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Insumo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NombreInsumo" class="control-label"></label>
+                <input asp-for="NombreInsumo" class="form-control" />
+                <span asp-validation-for="NombreInsumo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockInsumo" class="control-label"></label>
+                <input asp-for="StockInsumo" class="form-control" />
+                <span asp-validation-for="StockInsumo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CantidadInsumo" class="control-label"></label>
+                <input asp-for="CantidadInsumo" class="form-control" />
+                <span asp-validation-for="CantidadInsumo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MedidaInsumo" class="control-label"></label>
+                <input asp-for="MedidaInsumo" class="form-control" />
+                <span asp-validation-for="MedidaInsumo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockMinInsumo" class="control-label"></label>
+                <input asp-for="StockMinInsumo" class="form-control" />
+                <span asp-validation-for="StockMinInsumo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockMaxInsumo" class="control-label"></label>
+                <input asp-for="StockMaxInsumo" class="form-control" />
+                <span asp-validation-for="StockMaxInsumo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorInsumo" class="control-label"></label>
+                <input asp-for="ValorInsumo" class="form-control" />
+                <span asp-validation-for="ValorInsumo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Iva" class="control-label"></label>
+                <input asp-for="Iva" class="form-control" />
+                <span asp-validation-for="Iva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
